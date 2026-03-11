@@ -1,98 +1,95 @@
-# CRM Mobile (React Native + Expo)
+# 📱 CRM Mobile – Plataforma de Gestão
 
-[![React Native](https://img.shields.io/badge/React%20Native-0.70%2B-blue)](https://reactnative.dev/)
-[![Expo](https://img.shields.io/badge/Expo-SDK%2047-black)](https://expo.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue)](https://www.typescriptlang.org/)
+![React Native](https://img.shields.io/badge/React%20Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Expo](https://img.shields.io/badge/Expo-000020?style=for-the-badge&logo=expo&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Status](https://img.shields.io/badge/status-concluído-brightgreen?style=for-the-badge)
 
-Aplicação **mobile** para gerenciamento de **clientes**, **produtos**, **vendas** e **embalagens** em um sistema CRM, construída com **React Native + Expo + TypeScript**.
-
----
-
-## 🔥 Destaques
-
-- 📱 Interface mobile responsiva com React Native + Expo
-- 🧠 Gerenciamento de Clientes, Produtos, Vendas, Embalagens e Categorias
-- ⚡️ TypeScript em todo o projeto para tipagem segura
-- 🧭 Navegação entre telas com React Navigation
-- 🗂️ Estrutura organizada por responsabilidades (screens, components, services, contexts)
+> Aplicação **mobile** para gerenciamento de **clientes**, **produtos**, **vendas** e **embalagens** em um sistema CRM, desenvolvida com **React Native + Expo + TypeScript** 🛒.
 
 ---
 
-## ✅ Pré-requisitos
+## 📄 Sumário
 
-Antes de rodar o projeto:
-
-- **Node.js 18+**
-- **Yarn**
-- **Expo CLI** instalado globalmente:
-  ```bash
-  npm install -g expo-cli
-  ```
-- **Expo Go** no seu dispositivo físico (Android ou iOS), **ou** um emulador configurado
-
----
-
-## 🏁 Como rodar o projeto
-
-```bash
-# Clone o repositório
-git clone https://github.com/GabrielSMeireles/crm-mobile-react-native.git
-cd crm-mobile-react-native
-
-# Instale as dependências
-yarn install
-
-# Inicie o Expo
-yarn start
-```
-
-Após rodar `yarn start`, o **Metro Bundler** será aberto no navegador. Você pode:
-
-- 📷 Escanear o **QR Code** com o app **Expo Go** no celular
-- Pressionar `a` para abrir no **emulador Android**
-- Pressionar `i` para abrir no **simulador iOS** (apenas macOS)
+1. [Visão Geral](#-visão-geral)
+2. [Principais Funcionalidades](#-principais-funcionalidades)
+3. [Arquitetura e Organização](#-arquitetura-e-organização)
+4. [Estrutura do Projeto](#-estrutura-do-projeto)
+5. [Tecnologias Utilizadas](#-tecnologias-utilizadas)
+6. [Como Executar](#-como-executar)
+7. [Fluxo de Uso](#-fluxo-de-uso)
+8. [Autor](#-autor)
 
 ---
 
-## 📱 Telas e Funcionalidades
+## 🔍 Visão Geral
 
-### 🔑 Login
-- Tela inicial do app
-- Campos de e-mail e senha
-- Redirecionamento automático caso o usuário já esteja autenticado
+O **CRM Mobile** é uma aplicação de gestão desenvolvida para simular um sistema real de CRM, contemplando:
 
-### 👥 Clientes
-- Listagem de todos os clientes cadastrados
-- Cadastro de novo cliente
-- Edição de dados do cliente
-- Remoção de cliente
+* Autenticação de usuários
+* Gerenciamento de clientes
+* Catálogo de produtos por categoria
+* Registro e controle de vendas
+* Gerenciamento de embalagens
 
-### 📦 Produtos
-- Listagem de produtos com filtro por categoria
-- Cadastro de novo produto
-- Edição de produto existente
-- Remoção de produto
-
-### 🛒 Vendas
-- Listagem de vendas realizadas
-- Registro de nova venda
-- Edição e remoção de vendas
-
-### 🗂️ Categorias
-- Listagem de categorias de produtos
-- Cadastro, edição e remoção de categorias
-
-### 📫 Embalagens (Packing)
-- Listagem de tipos de embalagem
-- Cadastro, edição e remoção de embalagens
+O projeto foi desenvolvido inteiramente em **React Native + Expo**, com **TypeScript** para garantir tipagem segura e uma estrutura organizada e escalável.
 
 ---
 
-## 🗂️ Estrutura do Projeto
+## ⭐ Principais Funcionalidades
+
+1. **Autenticação**
+
+   * Tela de login com e-mail e senha.
+   * Sessão persistida localmente com AsyncStorage.
+   * Redirecionamento automático para usuários já autenticados.
+
+2. **Clientes**
+
+   * Listagem de clientes cadastrados.
+   * Cadastro de novo cliente.
+   * Edição e remoção de clientes.
+
+3. **Produtos**
+
+   * Listagem de produtos com filtro por categoria.
+   * Cadastro, edição e remoção de produtos.
+
+4. **Vendas**
+
+   * Listagem de vendas realizadas.
+   * Registro de nova venda.
+   * Edição e remoção de vendas.
+
+5. **Categorias**
+
+   * Listagem, cadastro, edição e remoção de categorias de produtos.
+
+6. **Embalagens (Packing)**
+
+   * Listagem, cadastro, edição e remoção de tipos de embalagem.
+
+---
+
+## 🏗️ Arquitetura e Organização
+
+### 📌 Estrutura Atual
+
+O projeto está organizado de forma modular com separação clara de responsabilidades:
+
+* Separação entre telas (screens), componentes visuais, serviços de dados e contextos globais.
+* Tipagem estática com TypeScript em toda a aplicação.
+* Gerenciamento de estado global via Context API.
+* Navegação estruturada com React Navigation (Stack e Tab).
+
+---
+
+## 📂 Estrutura do Projeto
 
 ```
 crm-mobile-react-native/
 ├── assets/                  # Ícones e imagens do app
+│
 ├── src/
 │   ├── components/          # Componentes reutilizáveis (botões, inputs, cards...)
 │   ├── screens/             # Telas da aplicação (Login, Clientes, Produtos, Vendas...)
@@ -100,6 +97,7 @@ crm-mobile-react-native/
 │   ├── services/            # Configuração das chamadas de dados
 │   ├── contexts/            # Contextos React (AuthContext, etc.)
 │   └── types/               # Tipos e interfaces TypeScript
+│
 ├── App.tsx                  # Ponto de entrada da aplicação
 ├── app.json                 # Configuração do Expo
 ├── tsconfig.json            # Configuração do TypeScript
@@ -108,25 +106,64 @@ crm-mobile-react-native/
 
 ---
 
-## 📦 Principais Dependências
+## 🔧 Tecnologias Utilizadas
 
-| Pacote | Finalidade |
+| Camada | Tecnologia |
 |---|---|
-| `react-native` | Framework mobile |
-| `expo` | Ambiente de desenvolvimento mobile |
-| `typescript` | Tipagem estática |
-| `@react-navigation/native` | Navegação entre telas |
-| `@react-native-async-storage/async-storage` | Persistência local de dados |
-| `react-native-vector-icons` | Ícones na interface |
+| **Mobile** | React Native • Expo |
+| **Linguagem** | TypeScript |
+| **Navegação** | React Navigation (Stack / Tab) |
+| **Estado Global** | Context API |
+| **Persistência Local** | AsyncStorage |
+| **Ícones** | React Native Vector Icons |
 
 ---
 
-## ✅ O que ver no projeto
+## 🚀 Como Executar
 
-- Estrutura de projeto React Native com Expo e TypeScript bem organizada
-- Navegação entre telas com React Navigation (Stack e Tab)
-- Separação clara de responsabilidades: telas, componentes, serviços e contextos
-- CRUD completo para todos os módulos do CRM
-- Uso de Context API para gerenciamento de estado global
+1. Clone o repositório:
+
+```bash
+git clone https://github.com/GabrielSMeireles/crm-mobile-react-native.git
+```
+
+2. Acesse a pasta do projeto e instale as dependências:
+
+```bash
+cd crm-mobile-react-native
+yarn install
+```
+
+3. Inicie o Expo:
+
+```bash
+yarn start
+```
+
+Após rodar `yarn start`, o **Metro Bundler** será aberto no navegador. Você pode:
+
+* 📷 Escanear o **QR Code** com o app **Expo Go** no celular
+* Pressionar `a` para abrir no **emulador Android**
+* Pressionar `i` para abrir no **simulador iOS** (apenas macOS)
 
 ---
+
+## 🔄 Fluxo de Uso
+
+1. Abra o app e faça login com suas credenciais.
+2. Navegue pelo menu para acessar os módulos disponíveis.
+3. Gerencie seus **clientes**: cadastre, edite ou remova registros.
+4. Acesse **produtos** e filtre por categoria.
+5. Registre uma nova **venda** associando cliente e produto.
+6. Gerencie **embalagens** e **categorias** conforme necessário.
+
+---
+
+## 👨‍💻 Autor
+
+**Gabriel Meireles**
+Desenvolvedor em formação com foco em Back-end e Fullstack.
+
+---
+
+> Projeto desenvolvido com foco em simular um sistema CRM real, aplicando boas práticas de desenvolvimento mobile com React Native e TypeScript.
