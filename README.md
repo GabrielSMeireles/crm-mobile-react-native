@@ -140,11 +140,60 @@ yarn install
 yarn start
 ```
 
-Após rodar `yarn start`, o **Metro Bundler** será aberto no navegador. Você pode:
+Após rodar `yarn start`, o **Metro Bundler** será aberto no navegador. Escolha uma das opções abaixo para rodar o app:
 
-* 📷 Escanear o **QR Code** com o app **Expo Go** no celular
-* Pressionar `a` para abrir no **emulador Android**
-* Pressionar `i` para abrir no **simulador iOS** (apenas macOS)
+---
+
+### 📷 Opção 1 — Expo Go (dispositivo físico)
+
+1. Instale o app **Expo Go** no seu celular (disponível na App Store e Google Play).
+2. Escaneie o **QR Code** exibido no terminal ou no navegador.
+3. O app será carregado diretamente no seu dispositivo.
+
+---
+
+### 🤖 Opção 2 — Android Studio (emulador Android)
+
+1. Instale o **Android Studio**: [https://developer.android.com/studio](https://developer.android.com/studio)
+
+2. Durante a instalação, certifique-se de incluir:
+   * Android SDK
+   * Android SDK Platform
+   * Android Virtual Device (AVD)
+
+3. Crie um emulador:
+   * Abra o Android Studio
+   * Vá em **More Actions → Virtual Device Manager**
+   * Clique em **Create Device**, escolha um modelo (ex: Pixel 6) e uma versão do Android (ex: API 33)
+   * Clique em **Finish** e depois no ▶️ para iniciar o emulador
+
+4. Configure as variáveis de ambiente no seu sistema (se ainda não estiverem configuradas):
+
+```bash
+# No arquivo ~/.bashrc, ~/.zshrc ou equivalente
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+```
+
+5. Com o emulador aberto e o Metro Bundler rodando, pressione `a` no terminal:
+
+```bash
+# O Expo detectará o emulador automaticamente e instalará o app
+a
+```
+
+> ✅ O app será instalado e aberto automaticamente no emulador Android.
+
+---
+
+### 🍎 Opção 3 — Simulador iOS (apenas macOS)
+
+Com o Xcode instalado, pressione `i` no terminal do Metro Bundler:
+
+```bash
+i
+```
 
 ---
 
@@ -167,3 +216,4 @@ Desenvolvedor em formação com foco em Back-end e Fullstack.
 ---
 
 > Projeto desenvolvido com foco em simular um sistema CRM real, aplicando boas práticas de desenvolvimento mobile com React Native e TypeScript.
+
